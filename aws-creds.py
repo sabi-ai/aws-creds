@@ -125,7 +125,8 @@ def update_terraform_credentials(credentials, terraform_token, terraform_url, wo
     dt_string = now.strftime("%Y/%m/%d %H:%M:%S")
     client = pyterprise.Client()
     client.init(token=terraform_token, url=terraform_url)
-    org = client.set_organization(id='sabi')
+    tf_org = get_terraform_org()
+    org = client.set_organization(id=tf_org)
     workspace = org.get_workspace(workspace_name)
 
     variables = get_variables_by_key(workspace.list_variables())
