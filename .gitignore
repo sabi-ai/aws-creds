@@ -1,0 +1,7 @@
+dist
+build
+.venv
+aws-creds
+*.spec
+
+
