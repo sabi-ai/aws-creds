@@ -3,5 +3,6 @@ build
 .venv
 aws-creds
 *.spec
+.history
 
 

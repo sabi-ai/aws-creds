@@ -1,5 +1,14 @@
 # AWS Credential script
 
+Install aws-vault (`brew install --cask aws-vault`)
+
+Install aws cli
+
+```
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+```
+
 The purpose of this script is to populate temporary credentials when using aws-vault (https://github.com/99designs/aws-vault).
 
 The script uses aws-vault to generate temporary aws credentials, and add them to the `~/.aws/credentials` file.
@@ -20,7 +29,18 @@ ON Linux
 
 ON MAC
 
-`env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.7.9`
+Update xcode tools to the latest version
+
+```
+softwareupdate -ia
+```
+
+```
+env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.7.9
+pyenv global 3.7.9
+pip install pipenv==2022.5.2
+```
+
 
 # Trigger initialization script and compile
 
